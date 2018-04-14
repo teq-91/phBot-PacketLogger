@@ -21,7 +21,7 @@ log_server = False
 
 
 def handle_silkroad(opcode, data):
-    if logClient:
+    if log_client:
         log('[%s]: packet from client to server' % (__name__))
         log('[%s]: \topcode: 0x%02X' % (__name__, opcode))
         if data is not None:
@@ -30,7 +30,7 @@ def handle_silkroad(opcode, data):
 
 
 def handle_joymax(opcode, data):
-    if logServer:
+    if log_server:
         if opcode == 0x2002:
             return True  # we don't want to log pings
         log('[%s]: packet from server to client' % (__name__))
