@@ -24,43 +24,43 @@ def handle_silkroad(opcode, data):
     if log_client:
         if opcode == 0x2002:
             return True  # we don't want to log pings
-        log('[%s]: packet from client to server' % (__name__))
-        log('[%s]: \topcode: 0x%02X' % (__name__, opcode))
+        log('[%s] packet from client to server' % (__name__))
+        log('[%s] \topcode: 0x%02X' % (__name__, opcode))
         if data is not None:
-            log('[%s]: \tdata: %s' % (__name__, binascii.hexlify(data)))
+            log('[%s] \tdata: %s' % (__name__, binascii.hexlify(data)))
     return True
 
 
 def handle_joymax(opcode, data):
     if log_server:
-        log('[%s]: packet from server to client' % (__name__))
-        log('[%s]: \topcode: 0x%02X' % (__name__, opcode))
+        log('[%s] packet from server to client' % (__name__))
+        log('[%s] \topcode: 0x%02X' % (__name__, opcode))
         if data is not None:
-            log('[%s]: \tdata: %s' % (__name__, binascii.hexlify(data)))
+            log('[%s] \tdata: %s' % (__name__, binascii.hexlify(data)))
     return True
 
 
 def log_client_start():
     global log_client
-    log('[%s]: log client started' % (__name__))
+    log('[%s] log client started' % (__name__))
     log_client = True
 
 
 def log_client_stop():
     global log_client
-    log('[%s]: log client stopped' % (__name__))
+    log('[%s] log client stopped' % (__name__))
     log_client = False
 
 
 def log_server_start():
     global log_server
-    log('[%s]: log server started' % (__name__))
+    log('[%s] log server started' % (__name__))
     log_server = True
 
 
 def log_server_stop():
     global log_server
-    log('[%s]: log server stopped' % (__name__))
+    log('[%s] log server stopped' % (__name__))
     log_server = False
 
 
